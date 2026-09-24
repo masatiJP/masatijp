@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<title>Portfolio</title>
+<meta name="description" content="Portfolio with live GitHub project data">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,380;9..144,520;9..144,620&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-row">
+    <a href="#top" class="brand">
+      <svg viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="12" stroke="currentColor" stroke-width="1.4"/><path d="M8 13l3.2 3.2L18 9.2" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span id="navName">Portfolio</span>
+    </a>
+    <div class="nav-right">
+      <nav class="links">
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="controls">
+        <div class="lang-switch" id="langSwitch">
+          <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" data-i18n-aria="a11y.langSwitcher">
+            <i class="fa-solid fa-globe"></i><span id="langCode">EN</span>
+          </button>
+          <ul class="lang-menu" id="langMenu" role="listbox" hidden>
+            <li role="option" data-lang="uk"><span>Українська</span><i class="fa-solid fa-check check"></i></li>
+            <li role="option" data-lang="ru"><span>Русский</span><i class="fa-solid fa-check check"></i></li>
+            <li role="option" data-lang="en"><span>English</span><i class="fa-solid fa-check check"></i></li>
+          </ul>
+        </div>
+        <button class="theme-toggle" id="themeToggle" data-i18n-aria="a11y.themeToggle" aria-label="Toggle theme"><i class="fa-solid fa-moon" id="themeIcon"></i></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <canvas id="net"></canvas>
+  <div class="hero-inner">
+    <div class="avatar-row" id="avatarRow" style="display:none">
+      <img id="avatarImg" alt="">
+      <div class="meta" id="metaLine"></div>
+    </div>
+    <h1 id="heroTitle">Turning code into things people actually use.</h1>
+    <p class="lede" id="heroLede">Developer. These are projects pulled straight from my GitHub.</p>
+    <div class="social-row" id="socialRow"></div>
+  </div>
+</section>
+
+<div class="section-head reveal">
+  <h2 data-i18n="projects.heading">Repositories</h2>
+  <p data-i18n="projects.sub">Pulled straight from the GitHub API.</p>
+</div>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="gallery-wrap">
+      <div class="gallery reveal" id="gallery" tabindex="0" data-i18n-aria="a11y.galleryLabel" aria-label="Project list">
+        <div class="state-msg" data-i18n="gallery.loading">Loading repositories…</div>
+      </div>
+      <div class="gallery-nav">
+        <button id="galPrev" data-i18n-aria="a11y.prevProjects" aria-label="Previous projects"><i class="fa-solid fa-arrow-left"></i></button>
+        <button id="galNext" data-i18n-aria="a11y.nextProjects" aria-label="Next projects"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--
+<div class="section-head reveal">
+  <h2 data-i18n="stats.heading">GitHub by the numbers</h2>
+  <p data-i18n="stats.sub">Computed on the fly, no third-party services.</p>
+</div>
+
+<section id="stats">
+  <div class="wrap">
+    <div class="stats-top reveal" id="statsTop"></div>
+    <div class="lang-panel reveal">
+      <h4 data-i18n="stats.langHeading">Languages across repos</h4>
+      <div id="langBars"><div class="state-msg" style="padding:0" data-i18n="stats.calculating">Calculating...</div></div>
+    </div>
+  </div>
+</section>
+-->
+
+
+<section id="contact" class="reveal">
+  <h2 data-i18n="contact.heading">Got a project or an idea?</h2>
+  <p data-i18n="contact.text">Open to interesting work and collaboration.</p>
+  <a class="magnetic" id="magnetBtn" href="mailto:you@example.com"><i class="fa-solid fa-paper-plane"></i> alexandr.masati@gmail.com</a>
+</section>
+
+<footer>© <span id="year"></span> <span data-i18n="footer.suffix">· this page is alive, data comes from the GitHub API</span></footer>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
